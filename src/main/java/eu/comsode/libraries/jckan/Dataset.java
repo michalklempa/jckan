@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+import eu.comsode.libraries.jckan.model.Resource;
+
 /**
  * Represents a CKAN Dataset (previously a Package)
  *

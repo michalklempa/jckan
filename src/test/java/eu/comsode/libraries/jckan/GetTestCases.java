@@ -7,6 +7,7 @@ import static org.junit.Assert.* ;
 import com.google.gson.Gson;
 
 import eu.comsode.libraries.jckan.*;
+import eu.comsode.libraries.jckan.model.Resource;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class GetTestCases {
 
     @Test
     public void test_GetDataset() {
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                                GetTestCases.ApiKey);
         try {
             Dataset ds = new Dataset();
@@ -44,7 +45,7 @@ public class GetTestCases {
 
     @Test
     public void test_GetDatasetFail() {
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                                GetTestCases.ApiKey);
         try {
             Dataset get = c.getDataset( UUID.randomUUID().toString() );
@@ -55,7 +56,7 @@ public class GetTestCases {
 
     @Test
     public void test_SearchDataset() {
-        Client c = new Client( new Connection("http://datahub.io"),
+        Clientsss c = new Clientsss( new Connection("http://datahub.io"),
                                "");
         try {
             Dataset.SearchResults results = c.findDatasets("gold");
@@ -70,7 +71,7 @@ public class GetTestCases {
 
     @Test
     public void test_GetDatasetTDH() {
-        Client c = new Client( new Connection("http://datahub.io"),
+        Clientsss c = new Clientsss( new Connection("http://datahub.io"),
                                "");
         try {
             Dataset get = c.getDataset( "gold-prices" );
@@ -85,7 +86,7 @@ public class GetTestCases {
 
     @Test
     public void test_GetGroupTDH() {
-        Client c = new Client( new Connection("http://datahub.io"),
+        Clientsss c = new Clientsss( new Connection("http://datahub.io"),
                                "");
         try {
             Group get = c.getGroup( "belarus_open_data" );
@@ -104,7 +105,7 @@ public class GetTestCases {
     public void test_Example() {
         // Create a new client with a connection to datahub.io, on the default
         // port and with no api key required.
-        Client client = new Client( new Connection("http://datahub.io"), "");
+        Clientsss client = new Clientsss( new Connection("http://datahub.io"), "");
 
         try {
             // Get the search results for the word gold

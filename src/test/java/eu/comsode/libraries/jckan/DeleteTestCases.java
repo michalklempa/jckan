@@ -23,7 +23,7 @@ public class DeleteTestCases {
 
     @Test
     public void test_DeleteDataset() {
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                               DeleteTestCases.ApiKey);
         try {
             Dataset ds = new Dataset();
@@ -40,7 +40,7 @@ public class DeleteTestCases {
 
     @Test
     public void test_DeleteDatasetNoAuth() {
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                               "invalid");
         try {
             Dataset ds = new Dataset();

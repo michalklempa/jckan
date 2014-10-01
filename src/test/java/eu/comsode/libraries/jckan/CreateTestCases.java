@@ -27,7 +27,7 @@ public class CreateTestCases {
     @Test
     public void test_CreateDataset() {
         System.out.println("Test 1");
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                               CreateTestCases.ApiKey);
         try {
             Dataset ds = new Dataset();
@@ -55,7 +55,7 @@ public class CreateTestCases {
     @Test
     public void test_CreateDatasetWithPlusInName() {
         System.out.println("Test 2");
-        Client c = new Client( new Connection("http://localhost", 5000),
+        Clientsss c = new Clientsss( new Connection("http://localhost", 5000),
                               CreateTestCases.ApiKey);
         try {
             Dataset ds = new Dataset();
