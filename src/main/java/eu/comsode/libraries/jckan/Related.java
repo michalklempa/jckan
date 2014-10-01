@@ -1,4 +1,4 @@
-package org.ckan;
+package eu.comsode.libraries.jckan;
 
 /**
  * Represents a related item on a dataset which

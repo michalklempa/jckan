@@ -1,4 +1,4 @@
-package org.ckan;
+package eu.comsode.libraries.jckan;
 
 /**
  * Represents an extra metadata field in a dataset or group

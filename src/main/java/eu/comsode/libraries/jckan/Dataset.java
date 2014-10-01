@@ -1,4 +1,4 @@
-package org.ckan;
+package eu.comsode.libraries.jckan;
 
 import java.net.URL;
 import java.util.Date;

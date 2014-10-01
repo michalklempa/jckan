@@ -1,12 +1,13 @@
-package org.ckan.tests;
+package eu.comsode.libraries.jckan;
 
 
 import org.junit.* ;
+
 import static org.junit.Assert.* ;
 
-import org.ckan.*;
-
 import com.google.gson.Gson;
+
+import eu.comsode.libraries.jckan.*;
 
 import java.util.ArrayList;
 import java.util.List;
