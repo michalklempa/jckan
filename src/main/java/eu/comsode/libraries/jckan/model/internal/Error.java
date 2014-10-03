@@ -1,4 +1,4 @@
-package eu.comsode.libraries.jckan.model;
+package eu.comsode.libraries.jckan.model.internal;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

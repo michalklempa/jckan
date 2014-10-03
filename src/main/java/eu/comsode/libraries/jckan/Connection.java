@@ -63,7 +63,7 @@ public final class Connection {
     * @throws A CKANException if the request fails
     */
     protected String Post(String path, String data)
-        throws CKANException {
+        throws CkanException {
         URL url = null;
 
         try {

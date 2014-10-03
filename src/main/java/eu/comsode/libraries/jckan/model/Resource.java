@@ -1,5 +1,9 @@
 package eu.comsode.libraries.jckan.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import eu.comsode.libraries.jckan.model.internal.Error;
+
 /**
  * Represents a single resource within a Dataset
  *
@@ -8,10 +12,63 @@ package eu.comsode.libraries.jckan.model;
  * @since       2012-05-01
  */
 public class Resource {
-    public class TrackingSummary {
+    public static class Response {
+        private String help;
+
+        private Error error;
+
+        private boolean success;
+
+        private Resource result;
+
+        public Response() {
+        }
+
+        public boolean isSuccess() {
+            return success;
+        }
+
+        public void setSuccess(boolean success) {
+            this.success = success;
+        }
+
+        public Resource getResult() {
+            return result;
+        }
+
+        public void setResult(Resource result) {
+            this.result = result;
+        }
+
+        public Error getError() {
+            return error;
+        }
+
+        public void setError(Error error) {
+            this.error = error;
+        }
+
+        public String getHelp() {
+            return help;
+        }
+
+        public void setHelp(String help) {
+            this.help = help;
+        }
+
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this);
+        }
+    }
+
+    public static class TrackingSummary {
         private long recent;
 
         private long total;
+
+        public TrackingSummary() {
+        }
 
         public long getRecent() {
             return recent;
@@ -27,6 +84,11 @@ public class Resource {
 
         public void setTotal(long total) {
             this.total = total;
+        }
+
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this);
         }
     }
 
@@ -52,22 +114,33 @@ public class Resource {
 
     private String name;
 
+    // only on create
+    private String package_id;
+
+    // generated
     private long position;
 
+    // generated
     private String resource_group_id;
 
     private String resource_type;
 
     private String revision_id;
 
+    // generated
+    private String revision_timestamp;
+
     private long size;
 
+    // generated
     private String state;
 
+    // generated
     private TrackingSummary tracking_summary;
 
     private String url;
 
+    // generated
     private String url_type;
 
     private String webstore_last_updated;
@@ -165,6 +238,14 @@ public class Resource {
         this.name = name;
     }
 
+    public String getPackage_id() {
+        return package_id;
+    }
+
+    public void setPackage_id(String package_id) {
+        this.package_id = package_id;
+    }
+
     public long getPosition() {
         return position;
     }
@@ -195,6 +276,14 @@ public class Resource {
 
     public void setRevision_id(String revision_id) {
         this.revision_id = revision_id;
+    }
+
+    public String getRevision_timestamp() {
+        return revision_timestamp;
+    }
+
+    public void setRevision_timestamp(String revision_timestamp) {
+        this.revision_timestamp = revision_timestamp;
     }
 
     public long getSize() {
@@ -251,5 +340,10 @@ public class Resource {
 
     public void setWebstore_url(String webstore_url) {
         this.webstore_url = webstore_url;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

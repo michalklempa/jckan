@@ -1,13 +1,13 @@
-package eu.comsode.libraries.jckan.model;
+package eu.comsode.libraries.jckan.model.internal;
 
-
-public class Response<T> {
+public class StringResponse {
+    private String help;
 
     private Error error;
 
     private boolean success;
 
-    private T result;
+    private String result;
 
     public boolean isSuccess() {
         return success;
@@ -17,11 +17,11 @@ public class Response<T> {
         this.success = success;
     }
 
-    public T getResult() {
+    public String getResult() {
         return result;
     }
 
-    public void setResult(T result) {
+    public void setResult(String result) {
         this.result = result;
     }
 
@@ -32,4 +32,13 @@ public class Response<T> {
     public void setError(Error error) {
         this.error = error;
     }
+
+    public String getHelp() {
+        return help;
+    }
+
+    public void setHelp(String help) {
+        this.help = help;
+    }
+
 }

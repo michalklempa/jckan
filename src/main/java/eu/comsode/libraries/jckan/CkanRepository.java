@@ -3,27 +3,22 @@ package eu.comsode.libraries.jckan;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
+import org.glassfish.jersey.jackson.JacksonFeature;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
+
 import eu.comsode.libraries.jckan.dao.ResourceDAO;
 
 public class CkanRepository {
-    private String apiKey;
-
-    private String ckanUri;
-
     private Client client;
 
     private ResourceDAO resourceDAO;
 
-    public CkanRepository() {
-
-    }
-
-    public void initialize() {
-        client = ClientBuilder.newClient();
-        resourceDAO = new ResourceDAO();
-        resourceDAO.setCkanUri(ckanUri);
-        resourceDAO.setApiKey(apiKey);
-        resourceDAO.setClient(client);
+    public CkanRepository(String ckanUri, String apiKey) {
+        client = ClientBuilder.newBuilder()
+                .register(MultiPartFeature.class)
+                .register(JacksonFeature.class)
+                .build();
+        resourceDAO = new ResourceDAO(client, ckanUri, apiKey);
     }
 
     public ResourceDAO getResourceDAO() {
