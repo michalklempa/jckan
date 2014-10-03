@@ -6,6 +6,7 @@ import javax.ws.rs.client.ClientBuilder;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
+import eu.comsode.libraries.jckan.dao.DatasetDAO;
 import eu.comsode.libraries.jckan.dao.ResourceDAO;
 
 public class CkanRepository {
@@ -13,15 +14,22 @@ public class CkanRepository {
 
     private ResourceDAO resourceDAO;
 
+    private DatasetDAO datasetDAO;
+
     public CkanRepository(String ckanUri, String apiKey) {
         client = ClientBuilder.newBuilder()
                 .register(MultiPartFeature.class)
                 .register(JacksonFeature.class)
                 .build();
         resourceDAO = new ResourceDAO(client, ckanUri, apiKey);
+        datasetDAO = new DatasetDAO(client, ckanUri, apiKey);
     }
 
     public ResourceDAO getResourceDAO() {
         return resourceDAO;
+    }
+
+    public DatasetDAO getDatasetDAO() {
+        return datasetDAO;
     }
 }
