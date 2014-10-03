@@ -4,3 +4,4 @@ dist/*
 docs/*
 lib/*
 test_results/*
+target/*
