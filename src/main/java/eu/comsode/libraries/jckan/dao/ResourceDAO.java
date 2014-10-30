@@ -2,6 +2,7 @@ package eu.comsode.libraries.jckan.dao;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.ws.rs.client.Client;
@@ -14,6 +15,8 @@ import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
 import org.glassfish.jersey.media.multipart.file.StreamDataBodyPart;
 
 import eu.comsode.libraries.jckan.CkanException;
+import eu.comsode.libraries.jckan.CkanRepository;
+import eu.comsode.libraries.jckan.model.Dataset;
 import eu.comsode.libraries.jckan.model.FileUpload;
 import eu.comsode.libraries.jckan.model.Resource;
 import eu.comsode.libraries.jckan.model.StreamUpload;
@@ -27,10 +30,13 @@ public class ResourceDAO {
 
     private String apiKey;
 
-    public ResourceDAO(Client client, String ckanUri, String apiKey) {
+    private CkanRepository parent;
+
+    public ResourceDAO(Client client, String ckanUri, String apiKey, CkanRepository parent) {
         this.client = client;
         this.ckanUri = ckanUri;
         this.apiKey = apiKey;
+        this.parent = parent;
     }
 
     public Resource create(String packageId, Resource resource, Upload upload) throws CkanException {
@@ -131,5 +137,11 @@ public class ResourceDAO {
         } catch (IOException ex) {
             throw new CkanException(ex);
         }
+    }
+
+    public List<Resource> list(String name) throws CkanException {
+        Dataset dataset = parent.getDatasetDAO().read(name);
+
+        return dataset.getResources();
     }
 }

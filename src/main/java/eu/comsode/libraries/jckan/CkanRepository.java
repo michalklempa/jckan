@@ -21,7 +21,7 @@ public class CkanRepository {
                 .register(MultiPartFeature.class)
                 .register(JacksonFeature.class)
                 .build();
-        resourceDAO = new ResourceDAO(client, ckanUri, apiKey);
+        resourceDAO = new ResourceDAO(client, ckanUri, apiKey, this);
         datasetDAO = new DatasetDAO(client, ckanUri, apiKey);
     }
 
@@ -31,5 +31,9 @@ public class CkanRepository {
 
     public DatasetDAO getDatasetDAO() {
         return datasetDAO;
+    }
+
+    public void closeClient() {
+        client.close();
     }
 }
