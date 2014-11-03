@@ -3,13 +3,11 @@ package eu.comsode.libraries.jckan;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import org.junit.Test;
-
 import eu.comsode.libraries.jckan.model.FileUpload;
 import eu.comsode.libraries.jckan.model.Resource;
 
 public class ResourceTest {
-    @Test
+//    @Test
     public void test2() throws CkanException, FileNotFoundException {
         CkanRepository ckanRepository = new CkanRepository("http://localhost:5000/api/3/action/", "c0b9f02a-6aff-4329-83c3-6686e14b4b5d");
         Resource resource1 = new Resource();

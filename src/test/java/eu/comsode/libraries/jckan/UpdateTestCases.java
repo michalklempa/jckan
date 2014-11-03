@@ -1,6 +1,5 @@
 package eu.comsode.libraries.jckan;
 
-import org.junit.Test;
 
 public class UpdateTestCases {
     private static String ApiKey;
@@ -11,7 +10,7 @@ public class UpdateTestCases {
         }
     }
 
-    @Test
+//    @Test
     public void test_UpdateDataset() {
 /*
  * Client c = new Client( new Connection("http://localhost", 5000),
