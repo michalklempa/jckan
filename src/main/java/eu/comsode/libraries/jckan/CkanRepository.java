@@ -9,7 +9,7 @@ import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import eu.comsode.libraries.jckan.dao.DatasetDAO;
 import eu.comsode.libraries.jckan.dao.ResourceDAO;
 
-public class CkanRepository {
+public class CkanRepository implements AutoCloseable {
     private Client client;
 
     private ResourceDAO resourceDAO;
@@ -33,7 +33,8 @@ public class CkanRepository {
         return datasetDAO;
     }
 
-    public void closeClient() {
+    @Override
+    public void close() {
         client.close();
     }
 }
