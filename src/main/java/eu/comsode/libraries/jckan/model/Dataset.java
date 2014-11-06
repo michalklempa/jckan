@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import eu.comsode.libraries.jckan.model.Resource.TrackingSummary;
@@ -17,6 +18,7 @@ import eu.comsode.libraries.jckan.model.internal.Error;
  * @version     1.7
  * @since       2012-05-01
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Dataset {
 
     public static class Response {

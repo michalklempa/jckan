@@ -2,6 +2,8 @@ package eu.comsode.libraries.jckan.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import eu.comsode.libraries.jckan.model.internal.Error;
 
 /**
@@ -11,6 +13,7 @@ import eu.comsode.libraries.jckan.model.internal.Error;
  * @version     2.2
  * @since       2012-05-01
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Resource {
     public static class Response {
         private String help;
